@@ -1,0 +1,38 @@
+ISpySi\WelcomeBundle\Entity\Art:
+  type: entity
+  repositoryClass: ISpySi\WelcomeBundle\Repository\ArtRepository
+  table: art
+  id:
+    id:
+      type: integer
+      primary: true
+      generator: { strategy: AUTO }
+  fields:
+    name:
+      type: string
+      length: 300
+      nullable: true
+    filename:
+      type: string
+      length: 300
+    notes:
+      type: text
+      length: 1000
+    dateAdded:
+      type: date
+      #gedmo:
+      #  timestampable:
+      #    on: create
+      nullable: true
+    dateCreated:
+      type: date
+      nullable: true
+    featured:
+      type: boolean
+      nullable: true
+  manyToOne:
+    artType:
+      targetEntity: ArtType
+    mediaType:
+      targetEntity: MediaType
+    

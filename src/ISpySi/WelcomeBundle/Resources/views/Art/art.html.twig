@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+{% block title %}Art{% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
+{% block pageTitle %}Art{% endblock %}
+{% block body %}
+<div id="art">
+    {#% render "ISpySiWelcomeBundle:Art:artList" with {'artWorks':artWorks, 'artFolder':artFolder }  #}
+    {% include 'ISpySiWelcomeBundle:Art:artList.html.twig' with {'artWorks':artWorks, 'artFolder':artFolder } %}    
+
+</div>
+
+{% endblock %}

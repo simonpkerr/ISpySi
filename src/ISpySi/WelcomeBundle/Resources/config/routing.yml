@@ -1,0 +1,23 @@
+welcome:
+    pattern:  /index
+    defaults: { _controller: ISpySiWelcomeBundle:Default:index }
+
+art:
+  pattern: /art/{type}/{order}
+  defaults: { _controller: ISpySiWelcomeBundle:Art:artIndex }
+
+create:
+  pattern: /createnewart
+  defaults: { _controller: ISpySiWelcomeBundle:Art:create }
+  
+show:
+  pattern: /showoneart/{id}
+  defaults: { _controller: ISpySiWelcomeBundle:Art:show }
+  
+showArtByMediaType:
+  pattern: /showartbymedia/{id}
+  defaults: { _controller: ISpySiWelcomeBundle:Art:showArt }
+  
+error:
+  pattern: /error
+  defaults: { _controller: ISpySiWelcomeBundle:Default:error }

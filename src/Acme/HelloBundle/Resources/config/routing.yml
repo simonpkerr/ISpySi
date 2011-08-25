@@ -1,0 +1,3 @@
+hello:
+    pattern:  /hello/{fname}/{lname}
+    defaults: { _controller: AcmeHelloBundle:Hello:index }

@@ -1,0 +1,30 @@
+{% extends '::base.html.twig' %}
+{% block title %}Index{% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
+{% block body %}
+<div id="featured-art">
+    <h2>Featured Art</h2>
+    {% render "ISpySiWelcomeBundle:Art:featuredArt" with {'max':3 }  %}
+    {#
+    this pattern creates a link to the 'art' route and passes a param 'page' with the value of 'art'    
+    <a href="{{ path('art', { 'page' : 'art' }) }}">&hellip;all art</a>
+    #}
+    <a href="{{ path('art') }}">&hellip;all art</a>
+</div>
+<div id="featured-work">
+
+</div>
+<div id="contact-form">
+
+</div>
+
+<div id="my-details">
+
+</div>
+{% endblock %}
+{% block javascripts %} 
+{{ parent() }}
+{# <script src="{{ asset('bundles/ISpySi/scripts/main.js') }}" type="text/javascript"></script>#}
+{% endblock %}

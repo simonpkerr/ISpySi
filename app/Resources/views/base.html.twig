@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>I Spy Si. Simon Kerr&rsquo;s online portfolio - {% block title %}Home{% endblock %}</title>
+        {#<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />#}
+        {% block stylesheets %}
+        <link href="{{asset('bundles/ISpySi/css/reset.css') }}" type="text/css" rel="stylesheet" />
+        <link href="{{asset('bundles/ISpySi/css/main.css') }}" type="text/css" rel="stylesheet" />
+        {% endblock %}
+        
+    </head>
+    <body>
+        <div id="main-nav">
+            <ul>
+                <li id="art"><a href="#">Art</a></li>
+                <li id="work"><a href="#">Worky Stuff</a></li>
+                <li id="biog"><a href="#">Me</a></li>
+                <li id="contact"><a href="#">Contact</a></li>
+            </ul>
+        </div>
+            
+        <div id="page-title">
+            {# the 'path' function can be used to target any particular route defined in the routing config file #}
+            <h1><a href="{{path('welcome')}}" title="Back to home page">I Spy Si&hellip;(mon kerr)</a></h1>
+            <h1>{% block pageTitle %}{% endblock %}</h1>
+        </div>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+           {# <script src="{{ asset('bundles/ISpySi/scripts/main.js') }}" type="text/javascript"></script>#}
+        {% endblock %}
+    </body>
+</html>
+
+
