@@ -11,7 +11,9 @@ class __TwigTemplate_0e6df97fbdc10bb8cf2176cd834f0cec extends Twig_Template
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
+            'stylesheets' => array($this, 'block_stylesheets'),
             'body' => array($this, 'block_body'),
+            'javascripts' => array($this, 'block_javascripts'),
         );
     }
 
@@ -37,17 +39,31 @@ class __TwigTemplate_0e6df97fbdc10bb8cf2176cd834f0cec extends Twig_Template
         echo "Index";
     }
 
-    // line 4
+    // line 3
+    public function block_stylesheets($context, array $blocks = array())
+    {
+        // line 4
+        echo $this->renderParentBlock("stylesheets", $context, $blocks);
+        echo "
+";
+    }
+
+    // line 6
     public function block_body($context, array $blocks = array())
     {
-        // line 5
+        // line 7
         echo "<div id=\"featured-art\">
     <h2>Featured Art</h2>
     ";
-        // line 7
+        // line 9
         echo $this->env->getExtension('actions')->renderAction("ISpySiWelcomeBundle:Art:featuredArt", array("max" => 3), array());
-        // line 8
-        echo "</div>
+        // line 10
+        echo "    ";
+        // line 14
+        echo "    <a href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("art"), "html");
+        echo "\">&hellip;all art</a>
+</div>
 <div id=\"featured-work\">
 
 </div>
@@ -58,6 +74,17 @@ class __TwigTemplate_0e6df97fbdc10bb8cf2176cd834f0cec extends Twig_Template
 <div id=\"my-details\">
 
 </div>
+";
+    }
+
+    // line 27
+    public function block_javascripts($context, array $blocks = array())
+    {
+        echo " 
+";
+        // line 28
+        echo $this->renderParentBlock("javascripts", $context, $blocks);
+        echo "
 ";
     }
 

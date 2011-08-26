@@ -6,7 +6,14 @@
 {% block pageTitle %}Art{% endblock %}
 {% block body %}
 <div id="art">
-    {#% render "ISpySiWelcomeBundle:Art:artList" with {'artWorks':artWorks, 'artFolder':artFolder }  #}
+    <ul id="artSubNav">
+        <li><a href="{{ path('art', {'type':'1' })}}">Pencil Sketches</a></li>
+        <li><a href="{{ path('art', {'type':'2' })}}">Watercolours</a></li>
+        <li><a href="{{ path('art', {'type':'3' })}}">Acrylics</a></li>
+        <li><a href="{{ path('art', {'type':'4' })}}">3D Models</a></li>
+        <li><a href="{{ path('art', {'type':'5' })}}">Digital Paintings</a></li>
+    </ul>
+    <h2>{{ artWorks[0].mediaType.name }}</h2>
     {% include 'ISpySiWelcomeBundle:Art:artList.html.twig' with {'artWorks':artWorks, 'artFolder':artFolder } %}    
 
 </div>

@@ -52,10 +52,16 @@ class ISpySiWelcomeBundleEntityMediaTypeProxy extends \ISpySi\WelcomeBundle\Enti
         return parent::getName();
     }
 
+    public function addArtWorks(\ISpySi\WelcomeBundle\Entity\Art $artWorks)
+    {
+        $this->__load();
+        return parent::addArtWorks($artWorks);
+    }
+
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'id', 'name');
+        return array('__isInitialized__', 'id', 'name', 'artWorks');
     }
 
     public function __clone()

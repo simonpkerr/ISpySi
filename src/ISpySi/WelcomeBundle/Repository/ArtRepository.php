@@ -28,11 +28,38 @@ class ArtRepository extends EntityRepository {
     
     public function findArt($type, $order){
         $q = $this->createQueryBuilder('a')
-                //->where('a.mediaType_id = :mediaType')
+                //->select('a', 'm.name')
+                //->from('art', 'a')
+                //->innerJoin('a', 'mediaType_id', 'm', 'm.id = :type')
+                ->where('a.mediaType_id = :type')
+                ->setParameter('type', $type)
                 
                 ->orderBy('a.filename', 'ASC')
-                //->setParameter('mediaType', $media)
+                //->setParameter('order', $order)                
                 ->getQuery();
+        
+        /*$q = $this->createQueryBuilder()
+                ->select('a', 'm')
+                ->from('art', 'media')
+                ->leftJoin('a', 'mediaType', 'm', 'a.mediaType = m.name')
+                ->in
+                ->where('m.id = :type')
+                ->setParameter('type', $type)
+                ->getQuery();*/
+        
+        /*$qb = $this->createQueryBuilder()
+                ->select('u.name')
+                ->from('users', 'u')
+                ->innerJoin('u', 'phonenumbers', 'p', 'p.is_primary = 1');*/
+                
+        /*$qb = $this->createQueryBuilder()
+                ->select('a')
+                ->from('art', 'a')
+                //->innerJoin('a', 'mediaType', 'm', 'm.id = :type')
+                ->innerJoin('a.mediaType', 'm', 'ON', 'm.id = :type')
+                ->setParameter('type', $type)
+                ->getQuery();
+             */   
         
         return $q->getResult();
     }

@@ -6,13 +6,14 @@ class Art {
     protected $name;
     protected $filename;
     protected $notes;
-    protected $type_id;
-    protected $media_id;
     protected $dateAdded;
     protected $dateCreated;    
     protected $artType;
     protected $mediaType;
     protected $featured;
+    private $artType_id;
+    private $mediaType_id;
+    
     
     /**
      * Get id
@@ -182,5 +183,45 @@ class Art {
     public function getFeatured()
     {
         return $this->featured;
+    }
+    
+    /**
+     * Set artType_id
+     *
+     * @param integer $artTypeId
+     */
+    public function setArtTypeId($artTypeId)
+    {
+        $this->artType_id = $artTypeId;
+    }
+
+    /**
+     * Get artType_id
+     *
+     * @return integer 
+     */
+    public function getArtTypeId()
+    {
+        return $this->artType_id;
+    }
+
+    /**
+     * Set mediaType_id
+     *
+     * @param integer $mediaTypeId
+     */
+    public function setMediaTypeId($mediaTypeId)
+    {
+        $this->mediaType_id = $mediaTypeId;
+    }
+
+    /**
+     * Get mediaType_id
+     *
+     * @return integer 
+     */
+    public function getMediaTypeId()
+    {
+        return $this->mediaType_id;
     }
 }

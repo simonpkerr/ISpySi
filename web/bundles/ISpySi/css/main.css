@@ -1,0 +1,39 @@
+ul#artList li {
+    list-style-type: none;
+    /*float: left;*/
+    display: inline-table;
+    width: 24em;
+    margin: 1em;
+    background-color: #fff;
+    
+}
+
+ul#artList li img {
+    padding: 5em;
+    border: 1px solid #ddd;
+    margin-bottom: 2em;
+  
+}
+
+ul#artList li h3 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+ul#artList li dl {
+    padding: 0 2em;
+    font-size: 0.9em;
+    
+}
+
+
+ul#artList li dt {
+    float: left;
+    
+}
+
+ul#artList li dd {
+    display: block;
+    margin-left: 7em;
+    margin-bottom: 0.5em;
+}

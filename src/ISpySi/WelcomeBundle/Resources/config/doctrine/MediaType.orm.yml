@@ -1,5 +1,6 @@
 ISpySi\WelcomeBundle\Entity\MediaType:
   type: entity
+  repositoryClass: ISpySi\WelcomeBundle\Repository\MediaTypeRepository
   table: null
   fields:
     id:
@@ -10,4 +11,8 @@ ISpySi\WelcomeBundle\Entity\MediaType:
     name:
       type: string
       length: 255
+  oneToMany:
+    artWorks:
+      targetEntity: Art
+      mappedBy: mediaType
   lifecycleCallbacks: {  }

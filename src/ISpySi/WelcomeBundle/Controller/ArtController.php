@@ -22,9 +22,10 @@ class ArtController extends Controller
      * by media, type or ordering it by name or date created
      */
     
-    public function artIndexAction($type = 1, $order = 'name'){
+    public function artIndexAction($type, $order){
         $em = $this->getEntityManager();
-        //$media, $type, $order
+        
+        //$artWorks = $em->getRepository('ISpySiWelcomeBundle:MediaType')->findArtByMedia($type, $order);
         $artWorks = $em->getRepository('ISpySiWelcomeBundle:Art')->findArt($type, $order);
         if($artWorks != null){
              return $this->render('ISpySiWelcomeBundle:Art:art.html.twig', array('artWorks' => $artWorks, 'artFolder' => 'compressed'));
@@ -32,6 +33,9 @@ class ArtController extends Controller
         else {
             return $this->forward('ISpySiWelcomeBundle:Default:error');
         }
+        
+        
+        
     }
     
     //gets a certain number of random art works as defined in the database and passes to template
@@ -111,7 +115,7 @@ class ArtController extends Controller
             $r .= '<p>art name :' . $artWork . '</p>';
         }*/
         
-        //return new Response('its' . $artWorks);
+        return new Response('its' . count($artWorks));
         
     }
     

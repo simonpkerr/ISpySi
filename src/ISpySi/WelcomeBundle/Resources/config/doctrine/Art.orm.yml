@@ -30,6 +30,10 @@ ISpySi\WelcomeBundle\Entity\Art:
     featured:
       type: boolean
       nullable: true
+    artType_id:
+      type: integer
+    mediaType_id:
+      type: integer
   manyToOne:
     artType:
       targetEntity: ArtType

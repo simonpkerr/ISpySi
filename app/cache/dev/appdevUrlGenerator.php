@@ -34,6 +34,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_configurator_step' => true,
        '_configurator_final' => true,
        'welcome' => true,
+       'art' => true,
        'create' => true,
        'show' => true,
        'showArtByMediaType' => true,
@@ -164,6 +165,11 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getwelcomeRouteInfo()
     {
         return array(array (), array (  '_controller' => 'ISpySi\\WelcomeBundle\\Controller\\DefaultController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/index',  ),));
+    }
+
+    private function getartRouteInfo()
+    {
+        return array(array (  0 => 'type',  1 => 'order',), array (  '_controller' => 'ISpySi\\WelcomeBundle\\Controller\\ArtController::artIndexAction',  'type' => 1,  'order' => 'filename',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'order',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'type',  ),  2 =>   array (    0 => 'text',    1 => '/art',  ),));
     }
 
     private function getcreateRouteInfo()

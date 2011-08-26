@@ -50,7 +50,7 @@ class __TwigTemplate_3267023dfab0b00dddb6664d0aa7cc54 extends Twig_Template
             ";
         // line 25
         echo "            <h1><a href=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_welcome"), "html");
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("welcome"), "html");
         echo "\" title=\"Back to home page\">I Spy Si&hellip;(mon kerr)</a></h1>
             <h1>";
         // line 26

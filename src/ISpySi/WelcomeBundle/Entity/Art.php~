@@ -6,15 +6,13 @@ class Art {
     protected $name;
     protected $filename;
     protected $notes;
-    protected $type_id;
-    protected $media_id;
     protected $dateAdded;
     protected $dateCreated;    
     protected $artType;
     protected $mediaType;
+    protected $featured;
     
     
-
     /**
      * Get id
      *
@@ -163,5 +161,25 @@ class Art {
     public function getMediaType()
     {
         return $this->mediaType;
+    }
+   
+    /**
+     * Set featured
+     *
+     * @param boolean $featured
+     */
+    public function setFeatured($featured)
+    {
+        $this->featured = $featured;
+    }
+
+    /**
+     * Get featured
+     *
+     * @return boolean 
+     */
+    public function getFeatured()
+    {
+        return $this->featured;
     }
 }

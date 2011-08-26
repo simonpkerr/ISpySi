@@ -25,6 +25,7 @@ body {
  line-height: 1;
  color: black;
  background: white;
+ font-family: Verdana, sans-serif;
 }
 
 ol, ul {

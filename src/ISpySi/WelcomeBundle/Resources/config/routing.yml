@@ -4,7 +4,7 @@ welcome:
 
 art:
   pattern: /art/{type}/{order}
-  defaults: { _controller: ISpySiWelcomeBundle:Art:artIndex }
+  defaults: { _controller: ISpySiWelcomeBundle:Art:artIndex, type: 1, order: filename }
 
 create:
   pattern: /createnewart
@@ -21,3 +21,4 @@ showArtByMediaType:
 error:
   pattern: /error
   defaults: { _controller: ISpySiWelcomeBundle:Default:error }
+  

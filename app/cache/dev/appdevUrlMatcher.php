@@ -148,6 +148,11 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'ISpySi\\WelcomeBundle\\Controller\\DefaultController::indexAction',  '_route' => 'welcome',);
         }
 
+        // art
+        if (0 === strpos($pathinfo, '/art') && preg_match('#^/art(?:/(?P<type>[^/]+?)(?:/(?P<order>[^/]+?))?)?$#x', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'ISpySi\\WelcomeBundle\\Controller\\ArtController::artIndexAction',  'type' => 1,  'order' => 'filename',)), array('_route' => 'art'));
+        }
+
         // create
         if ($pathinfo === '/createnewart') {
             return array (  '_controller' => 'ISpySi\\WelcomeBundle\\Controller\\ArtController::createAction',  '_route' => 'create',);
