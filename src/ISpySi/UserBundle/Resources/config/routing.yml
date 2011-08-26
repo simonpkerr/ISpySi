@@ -1,0 +1,3 @@
+ISpySiUserBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: ISpySiUserBundle:Default:index }

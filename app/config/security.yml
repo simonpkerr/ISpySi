@@ -11,28 +11,37 @@ security:
             users:
                 user:  { password: userpass, roles: [ 'ROLE_USER' ] }
                 admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
-
+        main:
+          entity: { class: ISpySi\UserBundle\Entity\User, property: username }    
+                
+    #this section determines the patterns for which areas are secured
+    #and which are open. So in the code below, the login action is open
+    #but the check path is secured
+    #the access control area determines which areas of the site are secured
+    #in this case all routes beginning with 'admin'    
     firewalls:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
         login:
-            pattern:  ^/demo/secured/login$
+            pattern:  ^/login$
             security: false
 
         secured_area:
-            pattern:    ^/demo/secured/
+            pattern:    ^/
             form_login:
-                check_path: /demo/secured/login_check
-                login_path: /demo/secured/login
+                check_path: /login_check
+                login_path: /login
             logout:
-                path:   /demo/secured/logout
-                target: /demo/
-            #anonymous: ~
+                path:   /logout
+                target: /index
+            anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
 
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
         #- { path: ^/_internal, roles: IS_AUTHENTICATED_ANONYMOUSLY, ip: 127.0.0.1 }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+

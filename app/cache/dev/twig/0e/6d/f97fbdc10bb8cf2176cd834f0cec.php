@@ -60,7 +60,7 @@ class __TwigTemplate_0e6df97fbdc10bb8cf2176cd834f0cec extends Twig_Template
         // line 10
         echo "    ";
         // line 14
-        echo "    <a href=\"";
+        echo "    <a id=\"allArt\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("art"), "html");
         echo "\">&hellip;all art</a>
 </div>

@@ -1,11 +1,19 @@
+ISpySiUserBundle:
+    resource: "@ISpySiUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ISpySiAdminBundle:
+    resource: "@ISpySiAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+ISpySiSecurityBundle:
+    resource: "@ISpySiSecurityBundle/Resources/config/routing.yml"
+    prefix:   /
+
 ISpySiWelcomeBundle:
     resource: "@ISpySiWelcomeBundle/Resources/config/routing.yml"
     prefix:   /
-
-#AcmeHelloBundle:
-#    resource: "@AcmeHelloBundle/Resources/config/routing.yml"
-#    prefix:   /
-
+     
 # Internal routing configuration to handle ESI
 #_internal:
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"

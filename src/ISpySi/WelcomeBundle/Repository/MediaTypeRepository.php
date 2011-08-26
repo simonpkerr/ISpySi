@@ -10,7 +10,7 @@ class MediaTypeRepository extends EntityRepository {
         return $mediaType->getArtWorks();
      }*/
      
-     public function findArtByMedia($type, $order){
+     /*public function findArtByMedia($type, $order){
          $q = $this->createQueryBuilder('m')
                     ->where('m.name = :type')
                     ->setParameter('type', $type)
@@ -18,6 +18,6 @@ class MediaTypeRepository extends EntityRepository {
                     ->where('a.artType = m.name')
                     ->orderBy('a.filename', 'ASC')
                     ->getQuery();
-     }
+     }*/
 }
 ?>

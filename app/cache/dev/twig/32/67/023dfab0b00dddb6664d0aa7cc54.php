@@ -39,7 +39,10 @@ class __TwigTemplate_3267023dfab0b00dddb6664d0aa7cc54 extends Twig_Template
     <body>
         <div id=\"main-nav\">
             <ul>
-                <li id=\"art\"><a href=\"#\">Art</a></li>
+                <li id=\"art\"><a href=\"";
+        // line 16
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("art"), "html");
+        echo "\">Art</a></li>
                 <li id=\"work\"><a href=\"#\">Worky Stuff</a></li>
                 <li id=\"biog\"><a href=\"#\">Me</a></li>
                 <li id=\"contact\"><a href=\"#\">Contact</a></li>

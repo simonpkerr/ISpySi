@@ -3,6 +3,10 @@
 <li>
     {% if artFolder == 'compressed' %}
     <img src="{{ asset('bundles/ISpySi/images/artWork/' ~ artFolder ~ '/') ~ artWork.filename }}.jpg" alt="{{ artWork.filename }}" />
+    {% else %}
+    <img class="featuredArt" src="{{ asset('bundles/ISpySi/images/artWork/') ~ artWork.filename }}.jpg" alt="{{ artWork.filename }}" />
+    {% endif %}
+    <div class="artWorkDescription">
     <h3>{{ artWork.filename }}</h3>
     <dl>
         {#<dt>Media</dt><dd>{{ artWork.mediaType.name }}</dd>#}
@@ -14,9 +18,7 @@
         <dt>Notes</dt><dd>{{ artWork.notes }}</dd>
         {% endif %}
     </dl>
-    {% else %}
-    <img class="featuredArt" src="{{ asset('bundles/ISpySi/images/artWork/') ~ artWork.filename }}.jpg" alt="{{ artWork.filename }}" />
-    {% endif %}
+    </div>
     {# 
     this template is referred to from the ArtController, featuredArtAction and is 
     in turn called from another page, passing in a number of items to load

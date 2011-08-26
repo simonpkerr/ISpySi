@@ -143,6 +143,21 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // admin
+        if ($pathinfo === '/admin') {
+            return array (  '_controller' => 'ISpySi\\AdminBundle\\Controller\\AdminController::indexAction',  '_route' => 'admin',);
+        }
+
+        // login
+        if ($pathinfo === '/login') {
+            return array (  '_controller' => 'ISpySi\\SecurityBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
+        }
+
+        // login_check
+        if ($pathinfo === '/login_check') {
+            return array('_route' => 'login_check');
+        }
+
         // welcome
         if ($pathinfo === '/index') {
             return array (  '_controller' => 'ISpySi\\WelcomeBundle\\Controller\\DefaultController::indexAction',  '_route' => 'welcome',);

@@ -1,3 +1,38 @@
+/*------ featured art works ----*/
+ul#featuredArtList li{
+    width: 60em;
+    margin: 1em 0;
+    
+}
+
+ul#featuredArtList li div.artWorkDescription {
+    float: left;
+    width: 35%;
+}
+
+ul#featuredArtList img{
+    width: 55%;
+    padding: 0 2em 2em 2em;
+    float: left;
+}
+
+ul#featuredArtList li h3 {
+    text-align: left;
+    margin-bottom: 2em;
+}
+
+ul#featuredArtList li dl
+{
+    font-size: 0.9em;
+    
+}
+
+a#allArt {
+    clear: both;
+    display: block;
+}
+
+/*------ art page art works ----*/
 ul#artList li {
     list-style-type: none;
     /*float: left;*/
@@ -20,19 +55,23 @@ ul#artList li h3 {
     margin-bottom: 1em;
 }
 
-ul#artList li dl {
+ul#artList li dl
+{
     padding: 0 2em;
     font-size: 0.9em;
     
 }
 
 
-ul#artList li dt {
+ul#artList li dt,
+ul#featuredArtList li dt {
     float: left;
     
 }
 
-ul#artList li dd {
+ul#artList li dd,
+ul#featuredArtList li dd
+{
     display: block;
     margin-left: 7em;
     margin-bottom: 0.5em;
